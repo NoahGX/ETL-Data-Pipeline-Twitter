@@ -19,14 +19,14 @@ dag = DAG(
     default_args=default_args,
     description='A simple Twitter ETL DAG',
     schedule_interval=timedelta(days=1),
-    start_date=days_ago(1)
+    start_date=days_ago(1),
     catchup=False,
 )
 
 run_etl = PythonOperator(
     task_id='run_twitter_etl',
     python_callable=run_twitter_etl,
-    dag=dag, 
+    dag=dag,
 )
 
 run_etl
