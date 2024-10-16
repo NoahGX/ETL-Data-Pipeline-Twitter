@@ -1,5 +1,5 @@
 from airflow import DAG
-from datetime import datetime, timedelta
+from datetime import timedelta
 from twitter_etl import run_twitter_etl
 from airflow.utils.dates import days_ago
 from airflow.operators.python import PythonOperator
@@ -19,8 +19,7 @@ dag = DAG(
     default_args=default_args,
     description='A simple Twitter ETL DAG',
     schedule_interval=timedelta(days=1),
-    start_date=datetime(2024, 10, 15),
-    # or "start_date=days_ago(1)" for dynamic start
+    start_date=days_ago(1)
     catchup=False,
 )
 
