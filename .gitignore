@@ -1,1 +1,15 @@
+# Environment variables
 config/.env
+
+# Data files
+data/
+
+# Virtual environments
+twitter-env/
+
+# Airflow files
+airflow_ec2_key.pem
+airflow/
+
+# OS-specific files
+.DS_Store
