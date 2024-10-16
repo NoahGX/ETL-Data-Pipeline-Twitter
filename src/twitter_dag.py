@@ -2,7 +2,7 @@ from airflow import DAG
 from datetime import datetime, timedelta
 from twitter_etl import run_twitter_etl
 from airflow.utils.dates import days_ago
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python import PythonOperator
 
 default_args = {
     'owner': 'airflow',
