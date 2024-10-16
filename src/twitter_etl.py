@@ -1,9 +1,7 @@
 import os
 import s3fs
-import json
 import tweepy
 import pandas as pd
-from datetime import datetime
 from dotenv import load_dotenv
 
 # Use environment variable for API Key storage
@@ -44,4 +42,4 @@ def run_twitter_etl():
         
     # Save the data to the data directory
     df = pd.DataFrame(tweet_list)
-    df.to_csv('../data/refined_tweets.csv', index=False)
+    df.to_csv('s3://etl-data-pipeline-twitter/refined_tweets.csv', index=False)
