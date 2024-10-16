@@ -62,30 +62,15 @@ pip install pandas s3fs tweepy python-dotenv
 airflow standalone
 ```
 
-### Step 6: Configure Airflow
+### Step 6: Configure and Access Airflow
 - **DAGs Folder**: Ensure your DAG files are in the default Airflow DAGs folder (`~/airflow/dags`).
-
-### Step 7: Set Up Environment Variables
-- **Create `.env` File on EC2 Instance**:
-```bash
-nano .env
-```
-- **Add Your Twitter API Credentials**:
-```
-ACCESS_KEY=your_access_key_here
-ACCESS_SECRET=your_access_secret_here
-CONSUMER_KEY=your_consumer_key_here
-CONSUMER_SECRET=your_consumer_secret_here
-```
-
-### Step 8: Access Airflow Web Interface
 - Open your browser and navigate to:
 ```
 http://your-ec2-public-dns:8080
 ```
 - Log in using the credentials you set when creating the Airflow user.
 
-### Step 9: Run the Airflow DAG
+### Step 7: Run the Airflow DAG
 - In the Airflow web interface, locate the `twitter_dag` and toggle it **On**.
 - Trigger the DAG manually or wait for it to run as per the schedule.
 
